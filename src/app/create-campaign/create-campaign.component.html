@@ -24,7 +24,7 @@
       <div class="col">
         <label for="name">first keyword</label>
         <input id="key1" name="key1" class="form-control"
-               autocomplete="on" value="Fast"
+               placeholder="short-term"
                required minlength="1"
                [(ngModel)]="campaign.keyWord1" #key1="ngModel" >
 
@@ -43,6 +43,7 @@
         <label for="name">second keyword</label>
 
         <input id="key2" name="key2" class="form-control"
+               placeholder="large-scale"
                required minlength="1" appForbiddenName=""
                [(ngModel)]="campaign.keyWord2" #key2="ngModel" >
 
@@ -58,6 +59,7 @@
         <label for="name">third keyword </label>
 
         <input id="key3" name="key3" class="form-control"
+               placeholder="eye-catching"
                required minlength="1" appForbiddenName=""
                [(ngModel)]="campaign.keyWord3" #key3="ngModel" >
 
