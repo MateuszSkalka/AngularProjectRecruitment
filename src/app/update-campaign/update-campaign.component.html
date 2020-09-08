@@ -1,0 +1,157 @@
+<h3>Update Campaign</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+
+
+    <div class="form-group">
+      <label for="name">Campaign Name</label>
+
+      <input id="name" name="name" class="form-control"
+             required minlength="1" appForbiddenName=""
+             [(ngModel)]="campaign.name" #name="ngModel" >
+
+
+      <div *ngIf="name.invalid && (name.dirty || name.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="name.errors.required">
+          Name is required.
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col">
+        <label for="name">first keyword</label>
+        <input id="key1" name="key1" class="form-control"
+               autocomplete="on" value="Fast"
+               required minlength="1"
+               [(ngModel)]="campaign.keyWord1" #key1="ngModel" >
+
+
+
+        <div *ngIf="key1.invalid && (key1.dirty || key1.touched)"
+             class="alert alert-danger">
+
+          <div *ngIf="key1.errors.required">
+            Keyword is required.
+          </div>
+        </div>
+
+      </div>
+      <div class="col">
+        <label for="name">second keyword</label>
+
+        <input id="key2" name="key2" class="form-control"
+               required minlength="1" appForbiddenName=""
+               [(ngModel)]="campaign.keyWord2" #key2="ngModel" >
+
+        <div *ngIf="key2.invalid && (key2.dirty || key2.touched)"
+             class="alert alert-danger">
+
+          <div *ngIf="key2.errors.required">
+            Keyword is required.
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <label for="name">third keyword </label>
+
+        <input id="key3" name="key3" class="form-control"
+               required minlength="1" appForbiddenName=""
+               [(ngModel)]="campaign.keyWord3" #key3="ngModel" >
+
+        <div *ngIf="key3.invalid && (key3.dirty || key3.touched)"
+             class="alert alert-danger">
+
+          <div *ngIf="key3.errors.required">
+            Keyword is required.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="name">Bid Amount (min. 1000)</label>
+      <input id="bid" name="bid" class="form-control"
+             required minlength="4" validate-positive-num
+             [(ngModel)]="campaign.bidAmount" #bid="ngModel" >
+
+      <div *ngIf="bid.invalid && (bid.dirty || bid.touched)"
+           class="alert alert-danger">
+        <div *ngIf="bid.errors">
+          Bid must be a positive number (minimum 1000)
+        </div>
+
+      </div>
+
+
+
+
+      <div class="form-group">
+        <label for="name">Campaign Fund</label>
+        <input id="fund" name="fund" class="form-control"
+               required validate-positive-num
+               [(ngModel)]="campaign.campaignFund" #camp="ngModel" >
+        <div *ngIf="camp.invalid && (camp.dirty || camp.touched)"
+             class="alert alert-danger">
+          <div *ngIf="camp.errors">
+            Campaign Fund must be a positive number.
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label for="name">Emerald account</label>
+      <input name="Price" #Price="ngModel" [(ngModel)]="emeraldAccount.emeraldAccount" class="form-control" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Status&nbsp; &nbsp;</label>
+      <select name="status" required [(ngModel)]="campaign.status">
+        <option selected>On</option>
+        <option>Off</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Town &nbsp; &nbsp; </label>
+
+      <select name="town" [(ngModel)]="campaign.town" >
+        <option selected="selected">Cracow</option>
+        <option>Warsaw</option>
+        <option>Wroclaw</option>
+        <option>Lodz</option>
+        <option>Gdansk</option>
+      </select>
+
+    </div>
+
+
+    <div class="form-group">
+      <label for="name">Radius</label>
+      <input id="radius" name="radius" class="form-control"
+             required minlength="1" validate-positive-num
+             [(ngModel)]="campaign.radius" #radius="ngModel" >
+
+      <div *ngIf="radius.invalid && (radius.dirty || radius.touched)"
+           class="alert alert-danger">
+        <div *ngIf="radius.errors">
+          Radius must be a positive number.
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+    <button type="submit" [disabled]="name.invalid || key1.invalid || key2.invalid
+                           || key3.invalid || bid.invalid || radius.invalid" class="btn btn-success">Submit</button>
+
+
+
+  </form>
+</div>

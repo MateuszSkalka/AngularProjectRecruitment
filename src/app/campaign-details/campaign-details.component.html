@@ -1,0 +1,38 @@
+<h2>Campaign Details</h2>
+
+<hr/>
+<div *ngIf="campaign">
+  <div>
+    <label><b>Name: </b></label> {{campaign.name}}
+  </div>
+  <div>
+    <label><b>Keyword1: </b></label>  {{campaign.keyWord1}}
+  </div>
+  <div>
+    <label><b>Keyword2: </b></label> {{campaign.keyWord2}}
+  </div>
+  <div>
+    <label><b>Keyword3: </b></label> {{campaign.keyWord3}}
+  </div>
+  <div>
+    <label><b>Bid Amount: </b></label> {{campaign.bidAmount}}
+  </div>
+  <div>
+    <label><b>Campaign Fund: </b></label> {{campaign.campaignFund}}
+  </div>
+  <div>
+    <label><b>Status: </b></label> {{campaign.status}}
+  </div>
+  <div>
+    <label><b>Town: </b></label> {{campaign.town}}
+  </div>
+  <div>
+    <label><b>Radius: </b></label> {{campaign.radius}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Campaign List</button><br>
+
+
